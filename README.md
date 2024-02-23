@@ -60,7 +60,7 @@
 
 # 🖥️ Architecture
 
-### [system architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/784802bf-6e48-49b4-a2b2-c02f50bcb7e2)
+### [system architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/c525e13f-feb7-40bd-a14d-401540ba46b9)
 
 ### [Cluster Architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/e2095b2d-69f3-4e5b-8d8b-ae6551c8f8c6)
 
@@ -71,13 +71,6 @@
 # Devops 프로젝트 문서
 ### [CI/CD 시나리오 설명](https://tessssssssy.notion.site/campingOnTop-DevOps-project-141e7fe587054369ab0cb0d89e81db33?pvs=4)
 
-
-<br>
-<br>
-
-# 📷 Figma
-
-### [campingOnTop Figma](https://www.figma.com/file/JeGMJmeA0suRljrCCnQ7Ny/campingOnTop-Figma?type=design&node-id=0-1&mode=design&t=ED4wl242eXWHWpMy-0)
 
 <br>
 <br>
