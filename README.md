@@ -1,4 +1,4 @@
-# 🏕️ 캠핑온탑 campingOnTop
+# 🏕️ 데브옵스 아키텍처 구현
 
 ![캠핑온탑 로고](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/98ccf4ba-f892-4069-b429-787847f04931)
 
@@ -58,9 +58,14 @@
 <br>
 <br>
 
-# 🖥️ Architecture
+# 📋 프로젝트 목표
 
-### [system architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/c525e13f-feb7-40bd-a14d-401540ba46b9)
+<br>
+<br>
+
+# 🖥️ 운영 환경
+
+### [System Architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/784802bf-6e48-49b4-a2b2-c02f50bcb7e2)
 
 ### [Cluster Architecture](https://github.com/beyond-sw-camp/be02-4th-MTM-cityCamp/assets/105422037/e2095b2d-69f3-4e5b-8d8b-ae6551c8f8c6)
 
@@ -71,6 +76,10 @@
 # Devops 프로젝트 문서
 ### [CI/CD 시나리오 설명](https://tessssssssy.notion.site/campingOnTop-DevOps-project-141e7fe587054369ab0cb0d89e81db33?pvs=4)
 
+<br>
+<br>
+
+# CI/CD 테스트 및 결과
 
 <br>
 <br>
