@@ -1,0 +1,7 @@
+apiVersion: v1 
+kind: ConfigMap 
+metadata: 
+  name: db-config 
+data: 
+  MYSQL_ROOT_PASSWORD: qwer1234@
+  MYSQL_DATABASE: campingontopDB

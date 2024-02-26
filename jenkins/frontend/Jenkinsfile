@@ -1,0 +1,76 @@
+pipeline {
+    agent any
+    
+    environment {
+        SLACK_CHANNEL = '#백엔드'
+    }
+    
+    stages {
+        stage('git clone') {
+                steps {
+                        git branch: 'main', url: 'https://github.com/Tesssssssssy/HanwhaBC-be02-FrontEndJenkins'
+                }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'npm i'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                slackSend(channel: SLACK_CHANNEL, color: '#FFFF00', message: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+                script {
+                    sh 'npm run build'
+                }
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                script {
+                    sh 'docker build --tag tessssssssy/frontend:9.$BUILD_NUMBER .'
+                }
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'docker-credential', usernameVariable: 'dockerID', passwordVariable: 'dockerPW')]) {
+                        sh "docker login -u ${dockerID} -p ${dockerPW}"
+                    }
+                    sh 'docker push tessssssssy/frontend:9.$BUILD_NUMBER'
+                }
+            }
+        }
+
+        stage('SSH transfer') {
+            steps {
+                sshPublisher(
+                    continueOnError: false,
+                    failOnError: true,
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: "CampingontopMaster",
+                            verbose: true,
+                            transfers: [
+                                sshTransfer(
+                                    sourceFiles: "frontend-deployment.yml",
+                                    remoteDirectory: "/root/",
+                                    execCommand: '''
+                                        sed -i "s/VERSION/$BUILD_ID/g" /root/frontend-deployment.yml
+                                        kubectl apply -f /root/frontend-deployment.yml
+                                    '''
+                                )
+                            ]
+                        )
+                    ]
+                )
+            }
+        }
+    }
+}
